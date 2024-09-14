@@ -14,7 +14,6 @@ public class SnakeLauncher {
                 new SnakeInterface().setVisible(true);
             }
         });
-        }
     }
 
 }
