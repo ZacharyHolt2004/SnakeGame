@@ -13,6 +13,8 @@ public class SnakeInterface extends JFrame {
 
     //Interface Components
     JPanel titleBar;
+    JPanel gameWindow;
+    JPanel interactArea;
 
     public SnakeInterface(){
         //configure GUI to end once closed.
@@ -39,6 +41,8 @@ public class SnakeInterface extends JFrame {
      */
     private void createGuiComponents() {
         createTitleBar();
+        createGameWindow();
+        createInteractArea();
     }
 
     /**
@@ -50,5 +54,21 @@ public class SnakeInterface extends JFrame {
         titleBar.setPreferredSize(new Dimension(GUI_WIDTH, GUI_HEIGHT / 10));
         titleBar.setBackground(new java.awt.Color(255, 0, 0));
         add(titleBar, BorderLayout.PAGE_START);
+    }
+
+    /**
+     * Method to instantiate the game window.
+     */
+    private void createGameWindow(){
+        gameWindow = new JPanel();
+        gameWindow.setBackground(new java.awt.Color(0, 255, 0));
+        add(gameWindow, BorderLayout.CENTER);
+    }
+
+    /**
+     * Method to instantiate the interact area where our control buttons will be.
+     */
+    private void createInteractArea(){
+
     }
 }
