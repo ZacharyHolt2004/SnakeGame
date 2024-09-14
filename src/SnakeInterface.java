@@ -10,6 +10,7 @@ public class SnakeInterface extends JFrame {
     //Interface Constants
     public static final int GUI_WIDTH = 1920;
     public static final int GUI_HEIGHT = 1080;
+    public static final int SIDE_PANE_WIDTH = 335;
 
     //Interface Components
     JPanel titleBar;
@@ -69,6 +70,10 @@ public class SnakeInterface extends JFrame {
      * Method to instantiate the interact area where our control buttons will be.
      */
     private void createInteractArea(){
-
+        interactArea = new JPanel();
+        interactArea.setLayout(new BoxLayout(interactArea, BoxLayout.PAGE_AXIS));
+        interactArea.setBackground(new java.awt.Color(0, 0, 255));
+        interactArea.setPreferredSize(new Dimension(SIDE_PANE_WIDTH, GUI_HEIGHT));
+        add(interactArea, BorderLayout.LINE_START);
     }
 }
