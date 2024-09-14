@@ -10,8 +10,8 @@ public class SnakeInterface extends JFrame {
     //Interface Constants
     public static final int GUI_WIDTH = 1920;
     public static final int GUI_HEIGHT = 1080;
-    public static final int SIDE_PANE_WIDTH = 560;
-    public static final int HORIZONTAL_PANE_HEIGHT = 140;
+    public static final int SIDE_PANE_WIDTH = 400;
+    public static final int HORIZONTAL_PANE_HEIGHT = 100;
     public static final int GAME_WINDOW_WIDTH = 850;
     public static final int GAME_WINDOW_HEIGHT = 850;
 
@@ -47,10 +47,10 @@ public class SnakeInterface extends JFrame {
      */
     private void createGuiComponents() {
         createTitleBar();
-        createGameWindow();
         createInteractArea();
         createContextArea();
         createPageBottom();
+        createGameWindow();
     }
 
     /**
