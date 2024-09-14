@@ -8,10 +8,8 @@ import java.awt.*;
  */
 public class SnakeInterface extends JFrame {
     //Interface Constants
-    public static final int GUI_WIDTH = 1920;
-    public static final int GUI_HEIGHT = 1080;
-    public static final int SIDE_PANE_WIDTH = 400;
-    public static final int HORIZONTAL_PANE_HEIGHT = 100;
+    public static final int GUI_WIDTH = 1600;
+    public static final int GUI_HEIGHT = 900;
     public static final int GAME_WINDOW_WIDTH = 850;
     public static final int GAME_WINDOW_HEIGHT = 850;
 
@@ -29,11 +27,14 @@ public class SnakeInterface extends JFrame {
         //set size of GUI.
         setSize(GUI_WIDTH, GUI_HEIGHT);
 
+        //hide default title bar
+        setUndecorated(true);
+
         //load to center of screen.
         setLocationRelativeTo(null);
 
         //set the layout of the application
-        setLayout(new BorderLayout());
+        setLayout(null);
 
         //prevent resizing.
         setResizable(false);
@@ -46,63 +47,19 @@ public class SnakeInterface extends JFrame {
      * Method to create the components of our GUI.
      */
     private void createGuiComponents() {
-        createTitleBar();
-        createInteractArea();
-        createContextArea();
-        createPageBottom();
         createGameWindow();
     }
 
     /**
-     * Method to instantiate the title bar of the interface.
-     */
-    private void createTitleBar() {
-        titleBar = new JPanel();
-        titleBar.setLayout(new FlowLayout());
-        titleBar.setPreferredSize(new Dimension(GUI_WIDTH, HORIZONTAL_PANE_HEIGHT));
-        titleBar.setBackground(new java.awt.Color(255, 0, 0));
-        add(titleBar, BorderLayout.PAGE_START);
-    }
-
-    /**
-     * Method to instantiate the game window.
+     * Method to make our game window
      */
     private void createGameWindow(){
         gameWindow = new JPanel();
-        gameWindow.setBackground(new java.awt.Color(0, 255, 0));
-        add(gameWindow, BorderLayout.CENTER);
+        gameWindow.setSize(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT);
+        gameWindow.setLocation( 25, 25);
+        gameWindow.setBackground(new java.awt.Color(200, 200, 200));
+        add(gameWindow);
     }
 
-    /**
-     * Method to instantiate the interact area where our control buttons will be.
-     */
-    private void createInteractArea(){
-        interactArea = new JPanel();
-        interactArea.setLayout(new BoxLayout(interactArea, BoxLayout.PAGE_AXIS));
-        interactArea.setBackground(new java.awt.Color(0, 0, 255));
-        interactArea.setPreferredSize(new Dimension(SIDE_PANE_WIDTH, GUI_HEIGHT));
-        add(interactArea, BorderLayout.LINE_START);
-    }
 
-    /**
-     * method to instantiate the contextArea.
-     */
-    private void createContextArea(){
-        contextArea = new JPanel();
-        contextArea.setLayout(new BoxLayout(contextArea, BoxLayout.PAGE_AXIS));
-        contextArea.setBackground(new java.awt.Color(255, 0, 255));
-        contextArea.setPreferredSize(new Dimension(SIDE_PANE_WIDTH, GUI_HEIGHT));
-        add(contextArea, BorderLayout.LINE_END);
-    }
-
-    /**
-     * method to instantiate the bottom of the gui.
-     */
-    private void createPageBottom(){
-        pageBottom = new JPanel();
-        pageBottom.setLayout(new FlowLayout());
-        pageBottom.setBackground(new java.awt.Color(0, 255, 255));
-        pageBottom.setPreferredSize(new Dimension(GUI_WIDTH, HORIZONTAL_PANE_HEIGHT));
-        add(pageBottom, BorderLayout.PAGE_END);
-    }
 }
