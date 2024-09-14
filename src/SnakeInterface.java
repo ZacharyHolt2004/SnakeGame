@@ -11,6 +11,9 @@ public class SnakeInterface extends JFrame {
     public static final int GUI_WIDTH = 1920;
     public static final int GUI_HEIGHT = 1080;
 
+    //Interface Components
+    JPanel titleBar;
+
     public SnakeInterface(){
         //configure GUI to end once closed.
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,5 +29,26 @@ public class SnakeInterface extends JFrame {
 
         //prevent resizing.
         setResizable(false);
+
+        //create GUI components;
+        createGuiComponents();
+    }
+
+    /**
+     * Method to create the components of our GUI.
+     */
+    private void createGuiComponents() {
+        createTitleBar();
+    }
+
+    /**
+     * Method to instantiate the title bar of the interface.
+     */
+    private void createTitleBar() {
+        titleBar = new JPanel();
+        titleBar.setLayout(new FlowLayout());
+        titleBar.setPreferredSize(new Dimension(GUI_WIDTH, GUI_HEIGHT / 10));
+        titleBar.setBackground(new java.awt.Color(255, 0, 0));
+        add(titleBar, BorderLayout.PAGE_START);
     }
 }
