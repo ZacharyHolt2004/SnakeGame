@@ -8,17 +8,21 @@ import java.awt.*;
  */
 public class SnakeInterface extends JFrame {
     //Interface Constants
-    public static final int GUI_WIDTH = 1600;
-    public static final int GUI_HEIGHT = 900;
-    public static final int GAME_WINDOW_WIDTH = 850;
-    public static final int GAME_WINDOW_HEIGHT = 850;
+    //GUI
+    private static final int GUI_WIDTH = 1200;
+    private static final int GUI_HEIGHT = 900;
+    //GAME WINDOW
+    private static final int GAME_WINDOW_WIDTH = 800;
+    private static final int GAME_WINDOW_HEIGHT = 800;
+    private static final int GAME_WINDOW_LOCATION_X = 43;
+    private static final int GAME_WINDOW_LOCATION_Y = 66;
+    //TITLE BAR
+    private static final int TITLE_BAR_HEIGHT = 26;
+
 
     //Interface Components
     JPanel titleBar;
     JPanel gameWindow;
-    JPanel interactArea;
-    JPanel contextArea;
-    JPanel pageBottom;
 
     public SnakeInterface(){
         //configure GUI to end once closed.
@@ -47,6 +51,7 @@ public class SnakeInterface extends JFrame {
      * Method to create the components of our GUI.
      */
     private void createGuiComponents() {
+        createTitleBar();
         createGameWindow();
     }
 
@@ -56,9 +61,20 @@ public class SnakeInterface extends JFrame {
     private void createGameWindow(){
         gameWindow = new JPanel();
         gameWindow.setSize(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT);
-        gameWindow.setLocation( 25, 25);
+        gameWindow.setLocation(GAME_WINDOW_LOCATION_X, GAME_WINDOW_LOCATION_Y);
         gameWindow.setBackground(new java.awt.Color(200, 200, 200));
         add(gameWindow);
+    }
+
+    /**
+     * Method to make the title bar.
+     */
+    private void createTitleBar(){
+        titleBar = new JPanel();
+        titleBar.setSize(GUI_WIDTH, TITLE_BAR_HEIGHT);
+        titleBar.setLocation(0, 0);
+        titleBar.setBackground(new java.awt.Color(200, 200, 200));
+        add(titleBar);
     }
 
 
