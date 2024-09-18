@@ -80,9 +80,15 @@ public class SnakeInterface extends JFrame {
         JLabel title = new JLabel();
         title.setText("     SnakeProject.java");
         title.setFont(new Font("Serif", Font.BOLD, 16));
-        title.setLocation(GAME_WINDOW_LOCATION_X, 13);
-        title.setVisible(true);
         titleBar.add(title, BorderLayout.LINE_START);
+
+        //Add the close button.
+        JButton close = new JButton();
+        close.setText("X");
+        close.setFocusPainted(false);
+        close.setBackground(new java.awt.Color(235, 65, 70));
+        close.setSize(15, 15);
+        titleBar.add(close, BorderLayout.LINE_END);
 
         //Add the fully rendered title bar.
         add(titleBar);
