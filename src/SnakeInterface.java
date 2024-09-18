@@ -22,12 +22,12 @@ public class SnakeInterface extends JFrame {
     //INTERFACE COMPONENTS - for use in referencing them when needed in different methods.
 
     //titleBar components
-    JPanel titleBar;
-    JLabel title;
-    JButton close;
+    private JPanel titleBar;
+    private JLabel title;
+    private JButton close;
 
     //gameWindow components
-    JPanel gameWindow;
+    private JPanel gameWindow;
 
     public SnakeInterface(){
         //configure GUI to end once closed.
