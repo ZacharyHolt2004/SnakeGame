@@ -21,6 +21,9 @@ public class SnakeInterface extends JFrame {
 
     //Interface Components
     JPanel titleBar;
+    JLabel title;
+    JButton close;
+
     JPanel gameWindow;
 
     public SnakeInterface(){
@@ -83,20 +86,34 @@ public class SnakeInterface extends JFrame {
         add(titleBar);
     }
 
+    /**
+     * Method to create the elements in the titleBar JPanel.
+     */
     private void createTitleBarElements(){
         //Add the title
-        JLabel title = new JLabel();
+        title = new JLabel();
         title.setText("     SnakeProject.java");
         title.setFont(new Font("Serif", Font.BOLD, 16));
         titleBar.add(title, BorderLayout.LINE_START);
 
         //Add the close button.
-        JButton close = new JButton();
+        close = new JButton();
         close.setText("X");
         close.setFocusPainted(false);
         close.setBackground(new java.awt.Color(235, 65, 70));
         close.setSize(15, 15);
+        setTitleBarButtonActions();
         titleBar.add(close, BorderLayout.LINE_END);
+    }
+
+    /**
+     * Method to add functionality to elements in titleBar JPanel.
+     */
+    private void setTitleBarButtonActions(){
+        //add close functionality to close button.
+        close.addActionListener(e -> {
+            super.dispose();
+        });
     }
 
 
