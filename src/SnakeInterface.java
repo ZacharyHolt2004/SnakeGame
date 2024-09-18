@@ -76,6 +76,14 @@ public class SnakeInterface extends JFrame {
         titleBar.setLayout(new BorderLayout());
         titleBar.setBackground(new java.awt.Color(200, 200, 200));
 
+        //add titleBar elements
+        createTitleBarElements();
+
+        //Add the fully rendered title bar.
+        add(titleBar);
+    }
+
+    private void createTitleBarElements(){
         //Add the title
         JLabel title = new JLabel();
         title.setText("     SnakeProject.java");
@@ -89,9 +97,6 @@ public class SnakeInterface extends JFrame {
         close.setBackground(new java.awt.Color(235, 65, 70));
         close.setSize(15, 15);
         titleBar.add(close, BorderLayout.LINE_END);
-
-        //Add the fully rendered title bar.
-        add(titleBar);
     }
 
 
