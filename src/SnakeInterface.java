@@ -11,19 +11,22 @@ public class SnakeInterface extends JFrame {
     //GUI
     private static final int GUI_WIDTH = 1200;
     private static final int GUI_HEIGHT = 900;
+    //TITLE BAR
+    private static final int TITLE_BAR_HEIGHT = 26;
     //GAME WINDOW
     private static final int GAME_WINDOW_WIDTH = 800;
     private static final int GAME_WINDOW_HEIGHT = 800;
     private static final int GAME_WINDOW_LOCATION_X = 43;
     private static final int GAME_WINDOW_LOCATION_Y = 66;
-    //TITLE BAR
-    private static final int TITLE_BAR_HEIGHT = 26;
 
-    //Interface Components
+    //INTERFACE COMPONENTS - for use in referencing them when needed in different methods.
+
+    //titleBar components
     JPanel titleBar;
     JLabel title;
     JButton close;
 
+    //gameWindow components
     JPanel gameWindow;
 
     public SnakeInterface(){
